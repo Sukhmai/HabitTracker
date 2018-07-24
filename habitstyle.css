@@ -1,0 +1,86 @@
+.button1 {
+	background-color: #4167f4;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	border-radius: 8px;
+}
+#center1 {
+	text-align: center;
+	/*padding-top:15%;*/
+}
+body{
+	/*background-color:rgba(255,0,0,0.4);*/ 
+}
+#welcome {
+	padding-top:10%;
+	text-align: center;
+	font-size: 72 px;
+}
+
+.habitName {
+	height:80px;
+	width:400px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size:60px;
+}
+.submitButton {
+	border: none;
+	background-color: #42f46e;
+	height: 50px;
+	width: 150px;
+	border-radius: 8px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+#myDIV {
+	display: none;
+}
+
+#habitList {
+	font-size:60px;
+	
+}
+
+#addUnits {
+	display: none;
+}
+
+#goal {
+	display: none;
+}
+
+#updateToday {
+	display: none;
+}
+table {
+      border-collapse: collapse;
+      border: 2px solid rgb(200,200,200);
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+    }
+    td, th {
+      border: 1px solid rgb(190,190,190);
+      padding: 20px 0px;
+      width: 10%;
+    }
+    td {
+      text-align: center;
+      font-size: 1.6rem;
+    }
+    caption {
+      padding: 10px;
+    }
+.weeks {
+	font-size: 0.8rem;
+}
+#Calendar td {
+	padding: 30px 0px;
+}

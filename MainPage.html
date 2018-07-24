@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stats</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="habitstyle.css">
+    <link rel="stylesheet" type ="text/css" href="tabstyle.css">
+  </head>
+  <body>
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'Stats')">Stats</button>
+      <button class="tablinks" onclick="openCity(event, 'Tracker')">New Habit</button>
+      <button class="tablinks" onclick="openCity(event, 'Log')">Daily Log</button>
+      <button class="tablinks" onclick="openCity(event, 'Habits')">View Habits</button>
+      <button class="tablinks" onclick="openCity(event, 'Update')">Update Daily Progress</button>
+      <button class="tablinks" onclick="openCity(event, 'Calendar')">Calendar</button>
+    </div>
+    <div id="Stats" class="tabcontent">
+      <div class="wrapper">
+        <h1 id=header>Running</h1>
+
+        <canvas id="canvas1" width="1600" height="900"></canvas>
+      </div>
+      <button onclick='switchLine()' id='line' class='button1'>Line Graph</button>
+      <button onclick='switchBar()' id='bar' class='button1'>Bar Graph</button>
+      <select name="Days" id="Days">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+      </select>
+      <input name="searchTxt" type="text" maxlength="512" id="searchTxt" class="searchField"/>
+      <button onclick='submit()' id='submit' class='submitButton'>Submit</button>
+  </div>
+  <div id="Tracker" class="tabcontent">
+    <button onclick='show(document.getElementById("myDIV"))' id='trackerButton' class='button1'>Add A Habit</button>
+    <div id='myDIV'>
+      <h1>Enter New Habit:</h1>
+      <input name= "habitName" type="text" maxlength="30" class="habitName" id="habitName"/>
+      <br/>
+      <button onclick='addAHabit()' class='submitButton'>Submit</button>
+    </div>
+    <div id='addUnits'>
+      <h1>How are you measuring your habit?:</h1>
+      <input name= "addUnitInput" id="addUnitInput" type="text" maxlength="30" class="habitName"/>
+      <br/>
+      <button onclick='addUnitMeasure()' class='submitButton'>Submit</button>
+    </div>
+    <div id='goal'>
+      <h1>What is your goal per day?</h1>
+      <input name= "goalInput" id="goalInput" type="text" maxlength="30" class="habitName"/>
+      <br/>
+      <button onclick='addGoal()' class='submitButton'>Submit</button>
+    </div>
+  </div>
+  <div id="Log" class="tabcontent">
+    <table id=logTable style="width:100%">
+      <tr>
+        <th>Days</th>
+        <th>Milez</th>
+      </tr>
+      <tr><td>Monday</td><td>0</td></tr>
+      <tr><td>Tuesday</td><td>0</td></tr>
+      <tr><td>Wednesday</td><td>0</td></tr>
+      <tr><td>Thursday</td><td>0</td></tr>
+      <tr><td>Friday</td><td>0</td></tr>
+      <tr><td>Saturday</td><td>0</td></tr>
+      <tr><td>Sunday</td><td>0</td></tr>  
+    </table>  
+  </div>
+  <div id="Habits" class="tabcontent">
+    <div id="habitList"></div>
+  </div>
+  <div id="Update" class="tabcontent">
+    <div id="habitList2"></div>
+    <div id='updateToday'>
+      <h1>How much did you do of this today?</h1>
+      <input name= "dayInput" id="dayInput" type="text" maxlength="30" class="habitName"/>
+      <br/>
+      <button onclick='submit2()' class='submitButton'>Submit</button>
+    </div>
+  </div>
+  <div id="Calendar" class="tabcontent">
+    <table id=calendarTable style="width:100%">
+      <tr>
+        <th>Weeks</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
+      </tr>
+      <tr><td class=weeks>Week1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      <tr><td class=weeks>Week2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      <tr><td class=weeks>Week3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      <tr><td class=weeks>Week4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      <tr><td class=weeks>Week5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    </table>
+  </div>
+    <script src="habit.js"></script>
+  </body>
+</html>
